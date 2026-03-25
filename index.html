@@ -3,16 +3,128 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>First Draft</title>
+  <title>Reelnews Control Room</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>First Draft</h1>
-    <p class="subtitle">Your HTML, CSS &amp; JavaScript starter app is ready.</p>
-    <button id="btn">Click me</button>
-    <p id="message" class="message"></p>
-  </div>
+
+  <!-- Mobile top bar -->
+  <header class="topbar">
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <span class="topbar-title" id="topbarTitle">Dashboard</span>
+  </header>
+
+  <!-- Overlay for mobile nav -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- Left navigation -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="brand">Reelnews</span>
+      <span class="brand-sub">Control Room</span>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-item active" data-screen="dashboard">
+        <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+        Dashboard
+      </li>
+      <li class="nav-item" data-screen="story-queue">
+        <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h10v2H4z"/></svg>
+        Story Queue
+      </li>
+      <li class="nav-item" data-screen="verification">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        Verification View
+      </li>
+      <li class="nav-item" data-screen="headline-lab">
+        <svg viewBox="0 0 24 24"><path d="M5 4v3h5.5v12h3V7H19V4z"/></svg>
+        Headline Lab
+      </li>
+      <li class="nav-item" data-screen="forecast-lab">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+        Forecast Lab
+      </li>
+      <li class="nav-item" data-screen="settlement">
+        <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+        Settlement Queue
+      </li>
+      <li class="nav-item" data-screen="archive">
+        <svg viewBox="0 0 24 24"><path d="M20 2H4c-1 0-2 .9-2 2v3.01c0 .72.43 1.34 1 1.72V20c0 1.1 1.1 2 2 2h14c.9 0 2-.9 2-2V8.72c.57-.38 1-.99 1-1.71V4c0-1.1-1-2-2-2zm-5 12H9v-2h6v2zm5-8H4V4h16v2z"/></svg>
+        Archive / Analytics
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main content -->
+  <main class="main">
+
+    <section class="screen active" id="screen-dashboard">
+      <div class="screen-header">
+        <h1>Dashboard</h1>
+      </div>
+      <div class="screen-body empty-state">
+        <p>Dashboard content goes here.</p>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-story-queue">
+      <div class="screen-header">
+        <h1>Story Queue</h1>
+      </div>
+      <div class="screen-body empty-state">
+        <p>Story Queue content goes here.</p>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-verification">
+      <div class="screen-header">
+        <h1>Verification View</h1>
+      </div>
+      <div class="screen-body empty-state">
+        <p>Verification View content goes here.</p>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-headline-lab">
+      <div class="screen-header">
+        <h1>Headline Lab</h1>
+      </div>
+      <div class="screen-body empty-state">
+        <p>Headline Lab content goes here.</p>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-forecast-lab">
+      <div class="screen-header">
+        <h1>Forecast Lab</h1>
+      </div>
+      <div class="screen-body empty-state">
+        <p>Forecast Lab content goes here.</p>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-settlement">
+      <div class="screen-header">
+        <h1>Settlement Queue</h1>
+      </div>
+      <div class="screen-body empty-state">
+        <p>Settlement Queue content goes here.</p>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-archive">
+      <div class="screen-header">
+        <h1>Archive / Analytics</h1>
+      </div>
+      <div class="screen-body empty-state">
+        <p>Archive / Analytics content goes here.</p>
+      </div>
+    </section>
+
+  </main>
+
   <script src="app.js"></script>
 </body>
 </html>
